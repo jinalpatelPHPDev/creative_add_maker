@@ -242,6 +242,14 @@ DB_PASSWORD="' . $dbPassword . '"
 
     private function storeConfiguration($key, $value)
     {
+        echo "<pre>";
+        print_r($key);
+        echo "</pre>";
+         echo "<pre>";
+        print_r($value);
+        echo "</pre>";
+
+        exit();
         $path = base_path('.env');
 
         if (file_exists($path)) {
