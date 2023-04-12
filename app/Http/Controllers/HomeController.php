@@ -245,13 +245,13 @@ DB_PASSWORD="' . $dbPassword . '"
         $path = base_path('.env');
 
 echo "<pre>";
-print_r($key . '=' . env('ENVATO_USERNAME'));
+print_r($key . '=' . config('constant.envanto.envanto_username'));
 
-echo "</pre>";
-print_r($value);
-echo "</pre>";
-print_r(file_get_contents($path));
-echo "</pre>";
+// echo "</pre>";
+// print_r($value);
+// echo "</pre>";
+// print_r(file_get_contents($path));
+// echo "</pre>";
 exit();
         if (file_exists($path)) {
             file_put_contents($path, str_replace(
