@@ -245,11 +245,7 @@ DB_PASSWORD="' . $dbPassword . '"
         $path = base_path('.env');
 
         if (file_exists($path)) {
-            echo "<pre>";
-            print_r("here");
-            echo "</pre>";
-            exit();
-            file_put_contents($path, str_replace(
+               file_put_contents($path, str_replace(
                 $key . '=' . env($key), $key . '=' . $value, file_get_contents($path)
             ));         
         }
