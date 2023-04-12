@@ -245,7 +245,9 @@ DB_PASSWORD="' . $dbPassword . '"
         $path = base_path('.env');
 
 echo "<pre>";
-print_r($key . '=' . config('constant.envanto.envanto_username'));
+print_r($key);
+echo "<pre>";
+print_r(config('constant.envanto.envanto_username'));
 
 // echo "</pre>";
 // print_r($value);
