@@ -244,20 +244,11 @@ DB_PASSWORD="' . $dbPassword . '"
     {
         $path = base_path('.env');
 
-echo "<pre>";
-print_r($key);
-echo "<pre>";
-print_r(config('constant.envanto.envanto_username'));
+        $envkey = config('constants.envanto.'.$key);
 
-// echo "</pre>";
-// print_r($value);
-// echo "</pre>";
-// print_r(file_get_contents($path));
-// echo "</pre>";
-exit();
         if (file_exists($path)) {
             file_put_contents($path, str_replace(
-                $key . '=' . env($key), $key . '=' . $value, file_get_contents($path)
+                $key . '=' . $envkey, $key . '=' . $value, file_get_contents($path)
             ));         
         }
         else
