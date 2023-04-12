@@ -90,10 +90,8 @@ class HomeController extends Controller
         {
             if($body->buyer == $userName)
             {
-                echo "<pre>";
-                print_r("here");
-                echo "</pre>";
-                exit();
+                
+                var_dump($this->storeConfiguration('ENVATO_USERNAME',$userName));exit;
                 $this->storeConfiguration('ENVATO_USERNAME',$userName);
                 $this->storeConfiguration('ENVATO_CODE',$request->purchase_code);
 
