@@ -242,22 +242,17 @@ DB_PASSWORD="' . $dbPassword . '"
 
     private function storeConfiguration($key, $value)
     {
-        echo "<pre>";
-        print_r($key);
-        echo "</pre>";
-         echo "<pre>";
-        print_r($value);
-        echo "</pre>";
-
-        exit();
+       
         $path = base_path('.env');
+        echo "<pre>";
+        print_r(file_put_contents($path, str_replace(
+                $key . '=' . env($key), $key . '=' . $value, file_get_contents($path)
+            )));
+        echo "</pre>";
+        exit();
 
         if (file_exists($path)) {
-            echo "<pre>";
-                    print_r($key);
-                    echo "</pre>";
-                    exit();
-            file_put_contents($path, str_replace(
+                      file_put_contents($path, str_replace(
                 $key . '=' . env($key), $key . '=' . $value, file_get_contents($path)
             )); 
                     
