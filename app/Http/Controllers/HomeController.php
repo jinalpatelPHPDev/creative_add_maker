@@ -247,7 +247,9 @@ DB_PASSWORD="' . $dbPassword . '"
 echo "<pre>";
 print_r($key . '=' . env($key));
 
+echo "</pre>";
 print_r($value);
+echo "</pre>";
 print_r(file_get_contents($path));
 echo "</pre>";
 exit();
