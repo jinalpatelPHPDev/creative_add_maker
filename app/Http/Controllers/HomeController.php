@@ -245,7 +245,7 @@ DB_PASSWORD="' . $dbPassword . '"
         $path = base_path('.env');
 
 echo "<pre>";
-print_r($key . '=' . env($key));
+print_r($key . '=' . env('ENVATO_USERNAME'));
 
 echo "</pre>";
 print_r($value);
