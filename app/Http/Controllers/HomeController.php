@@ -90,6 +90,10 @@ class HomeController extends Controller
         {
             if($body->buyer == $userName)
             {
+                echo "<pre>";
+                print_r("here");
+                echo "</pre>";
+                exit();
                 $this->storeConfiguration('ENVATO_USERNAME',$userName);
                 $this->storeConfiguration('ENVATO_CODE',$request->purchase_code);
 
@@ -242,13 +246,8 @@ DB_PASSWORD="' . $dbPassword . '"
 
     private function storeConfiguration($key, $value)
     {
-        echo $key."KEY";
-        echo $value."VALUE";
         $path = base_path('.env');
-echo "<pre>";
-print_r(file_get_contents($path));
-echo "</pre>";
-exit();
+
         if (file_exists($path)) {
             file_put_contents($path, str_replace(
                 $key . '=' . env($key), $key . '=' . $value, file_get_contents($path)
