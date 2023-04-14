@@ -18,12 +18,23 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        //return view('welcome');
+        try {
+         $dbconnect = DB::connection()->getPDO();
+         $dbname = DB::connection()->getDatabaseName();
+         echo "Connected successfully to the database. Database name is :".$dbname;
+      } catch(Exception $e) {
+         echo "Error in connecting to the database";
+      }
+
     }
 
     public function install()
