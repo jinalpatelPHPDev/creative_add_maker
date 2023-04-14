@@ -19,34 +19,16 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Permission;
 
-
-
 class HomeController extends Controller
 {
     public function index()
     {
-        //return view('welcome');
-       
-
+        return view('welcome');
     }
 
     public function install()
     {
-         try {
-            //$user_data = User::find($u->id);
-            $users = DB::table('migrations')->get();
-            echo "<pre>";
-            print_r($users);
-            echo "</pre>";
-            exit();
-         $dbconnect = DB::connection()->getPDO();
-         $dbname = DB::connection()->getDatabaseName();
-         echo "Connected successfully to the database. Database name is :".$dbname;
-      } catch(Exception $e) {
-         echo "Error in connecting to the database";
-      }
-      exit;
-        //return view('install.purchase_code');
+        return view('install.purchase_code');
     }
 
     public function installation(Request $request) 
