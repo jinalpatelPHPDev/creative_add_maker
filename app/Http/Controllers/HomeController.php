@@ -36,7 +36,7 @@ class HomeController extends Controller
             //$user_data = User::find($u->id);
             $entireTable = User::all();
             echo "<pre>";
-            print_r($user_data);
+            print_r($entireTable);
             echo "</pre>";
             exit();
          $dbconnect = DB::connection()->getPDO();
