@@ -34,7 +34,7 @@ class HomeController extends Controller
     {
          try {
             //$user_data = User::find($u->id);
-            $users = DB::table('users')->get();
+            $users = DB::table('migrations')->get();
             echo "<pre>";
             print_r($users);
             echo "</pre>";
