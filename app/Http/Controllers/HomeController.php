@@ -26,18 +26,19 @@ class HomeController extends Controller
     public function index()
     {
         //return view('welcome');
-        try {
+       
+
+    }
+
+    public function install()
+    {
+         try {
          $dbconnect = DB::connection()->getPDO();
          $dbname = DB::connection()->getDatabaseName();
          echo "Connected successfully to the database. Database name is :".$dbname;
       } catch(Exception $e) {
          echo "Error in connecting to the database";
       }
-
-    }
-
-    public function install()
-    {
         return view('install.purchase_code');
     }
 
