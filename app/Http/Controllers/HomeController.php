@@ -33,6 +33,12 @@ class HomeController extends Controller
     public function install()
     {
          try {
+            //$user_data = User::find($u->id);
+            $entireTable = User::all();
+            echo "<pre>";
+            print_r($user_data);
+            echo "</pre>";
+            exit();
          $dbconnect = DB::connection()->getPDO();
          $dbname = DB::connection()->getDatabaseName();
          echo "Connected successfully to the database. Database name is :".$dbname;
