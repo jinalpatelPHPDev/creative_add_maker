@@ -39,7 +39,8 @@ class HomeController extends Controller
       } catch(Exception $e) {
          echo "Error in connecting to the database";
       }
-        return view('install.purchase_code');
+      exit;
+        //return view('install.purchase_code');
     }
 
     public function installation(Request $request) 
