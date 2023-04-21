@@ -36,8 +36,8 @@ class CategoryFrameController extends Controller
 
     public function store(Request $request)
     {
-        echo phpinfo();
-        exit;
+        // echo phpinfo();
+        // exit;
         // dd($request->all());
         $validation = Validator::make($request->all(), [
             "category_id" => 'required',
