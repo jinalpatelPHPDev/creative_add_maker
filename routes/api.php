@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::namespace ('Api')->middleware(['throttle'])->prefix('CF9DF')->group(function () {
+Route::namespace ('Api')->middleware(['throttle'])->prefix(env('API_KEY'))->group(function () {
 	Route::post('/login', 'AuthApi@login');
     Route::post('/registration', 'AuthApi@registration');
     Route::post('/google-registration', 'AuthApi@google_registration');
@@ -11,7 +11,7 @@ Route::namespace ('Api')->middleware(['throttle'])->prefix('CF9DF')->group(funct
     Route::post('/forgot-password', 'AuthApi@forgot_password');
 });
 
-Route::namespace ('Api')->middleware(['throttle'])->prefix('CF9DF')->group(function(){
+Route::namespace ('Api')->middleware(['throttle'])->prefix(env('API_KEY'))->group(function(){
     Route::post('/change-password', 'AuthApi@change_password');
     // Route::post('/register-fcm', 'AuthApi@register_fcm');
     // Route::post('/logout', 'AuthApi@logout');
