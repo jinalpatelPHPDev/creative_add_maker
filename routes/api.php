@@ -4,8 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-
-
 Route::namespace ('Api')->middleware(['throttle'])->prefix(config('constants.routes.prefix'))->group(function(){
 
 	Route::post('/login', 'AuthApi@login');
@@ -29,7 +27,7 @@ Route::namespace ('Api')->middleware(['throttle'])->prefix(config('constants.rou
     Route::get('/get-home-data', 'HomeApi@getHomeData');
     Route::get('/story', 'HomeApi@getStory');
     Route::get('/festival', 'HomeApi@getFestival');
-    Route::get('/category', 'HomeApi@getCategory');
+    Route::get('/category', 'HomeApi@getCategory'); 
     Route::get('/custom-post', 'HomeApi@customPost');
     Route::get('/personal', 'HomeApi@personal');
     Route::post('/search', 'HomeApi@search');

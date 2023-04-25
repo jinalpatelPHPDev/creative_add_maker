@@ -384,6 +384,7 @@ class CategoryFrameController extends Controller
 
     public function getAspectRatio(int $width, int $height)
     {
+        
         $divisor = gmp_intval(gmp_gcd($width,$height));
         return $width / $divisor . ':' . $height / $divisor;
     }
