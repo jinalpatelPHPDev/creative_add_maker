@@ -1088,7 +1088,7 @@ class HomeApi extends Controller
         {
             $festival = FestivalsFrame::where("festivals_id",$request->id)->where('status',1)->get();
             echo "<pre>";
-            print_r( $festival);
+            print_r($festival);
             echo "</pre>";
             exit();
             if(!$festival->isEmpty())
