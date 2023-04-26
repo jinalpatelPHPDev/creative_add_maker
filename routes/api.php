@@ -3,13 +3,16 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::namespace ('Api')->middleware(['throttle'])->prefix(config('constants.routes.prefix'))->group(function () {
+
+Route::namespace ('Api')->middleware(['throttle'])->prefix(config('constants.routes.prefix'))->group(function(){
+
 	Route::post('/login', 'AuthApi@login');
     Route::post('/registration', 'AuthApi@registration');
     Route::post('/google-registration', 'AuthApi@google_registration');
     Route::post('/phone-login', 'AuthApi@phone_login');
     Route::post('/forgot-password', 'AuthApi@forgot_password');
 });
+
 
 Route::namespace ('Api')->middleware(['throttle'])->prefix(config('constants.routes.prefix'))->group(function(){
     Route::post('/change-password', 'AuthApi@change_password');
@@ -24,7 +27,7 @@ Route::namespace ('Api')->middleware(['throttle'])->prefix(config('constants.rou
     Route::get('/get-home-data', 'HomeApi@getHomeData');
     Route::get('/story', 'HomeApi@getStory');
     Route::get('/festival', 'HomeApi@getFestival');
-    Route::get('/category', 'HomeApi@getCategory');
+    Route::get('/category', 'HomeApi@getCategory'); 
     Route::get('/custom-post', 'HomeApi@customPost');
     Route::get('/personal', 'HomeApi@personal');
     Route::post('/search', 'HomeApi@search');
